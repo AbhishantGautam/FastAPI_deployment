@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import numpy as np
 import pandas as pd
 import pickle
-from .models import MInput
+from models import MInput
 
 app = FastAPI()
 pickle_in = open("classifier.pkl","rb")
@@ -32,7 +32,8 @@ def index(data:MInput):
         'visibility' : visibility,
         'pred_temp' : pred_temp
     }
-    return {'data' : data}
+    return {'data' : 'data'}
+
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='abhi-weather-api.herokuapp.com')
+    uvicorn.run(app, host='https://abhi-weather-api.herokuapp.com/')
