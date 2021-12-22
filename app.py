@@ -10,7 +10,7 @@ pickle_in = open("classifier.pkl","rb")
 classifier = pickle.load(pickle_in)
 
 @app.post('/')
-def index(data:MInput):
+def index(data):
     data = data.dict()
     temp = data['temp']
     feelslike = data['feelslike'],
@@ -30,7 +30,7 @@ def index(data:MInput):
         'winddir' : winddir,
         'sealevelpressure' : sealevelpressure,
         'visibility' : visibility,
-        'pred_temp' : pred_temp
+        'pred_temp' : pred_temp[0]
     }
     return {'data' : data}
 
