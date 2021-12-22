@@ -19,7 +19,7 @@ def index(data:MInput):
     windspeed = data['windspeed'],
     winddir = data['winddir'],
     sealevelpressure = data['sealevelpressure'],
-    visibility : data['visibility']
+    visibility = data['visibility']
     pred_temp = classifier.predict([[temp,feelslike,humidity,precip,windspeed,winddir,sealevelpressure,visibility]])
     data = {
         'temp' : temp,
@@ -32,7 +32,7 @@ def index(data:MInput):
         'visibility' : visibility,
         'pred_temp' : pred_temp
     }
-    return {'data' : 'data'}
+    return {'data' : data}
 
 
 if __name__ == '__main__':
