@@ -36,4 +36,4 @@ def index(data:MInput):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='https://abhi-weather-api.herokuapp.com/')
+    uvicorn.run(app, host='127.0.0.1', port=8000)
