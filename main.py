@@ -5,11 +5,11 @@ import pandas as pd
 import pickle
 from models import MInput
 
-app = FastAPI()
+main = FastAPI()
 pickle_in = open("classifier.pkl","rb")
 classifier = pickle.load(pickle_in)
 
-@app.post('/')
+@main.post('/')
 def index(data:MInput):
     data = data.dict()
     temp = data['temp']
@@ -36,4 +36,4 @@ def index(data:MInput):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(main, host='127.0.0.1', port=8000)
